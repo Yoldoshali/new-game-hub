@@ -9,7 +9,7 @@ import {
 import { MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
-import { HStack, Icon } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import { Platform } from "../hooks/usePlatforms";
 import { IconType } from "react-icons";
 
@@ -34,11 +34,11 @@ const PlatformIconList = ({ platforms = [] }: Props) => {
     <HStack marginY={1}>
       {platforms.map((platform) => {
         const IconComponent = iconMap[platform.slug];
-        return (
-          <Icon key={platform.id} color="gray.500">
-            <IconComponent />
-          </Icon>
-        );
+        if (!IconComponent) {
+          console.warn(`No icon found for platform: ${platform.slug}`);
+          return null; // Skip rendering if no icon found
+        }
+        return <IconComponent key={platform.id} color="gray.500" />;
       })}
     </HStack>
   );
