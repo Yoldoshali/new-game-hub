@@ -18,8 +18,12 @@ const GameDetailPage = () => {
     <Box margin={5}>
       <SimpleGrid columns={{ base: 1, md: 2 }} gap={4}>
         <Box>
-          <Heading>{game.name}</Heading>
+          <Heading fontSize="24px" fontWeight="bold">
+            {game.name}
+          </Heading>
+          <br />
           <ExpandableText>{game.description_raw}</ExpandableText>
+          <br />
           <GameAttributes game={game} />
         </Box>
         <Box>
