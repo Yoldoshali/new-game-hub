@@ -3,15 +3,11 @@ import logo from "../assets/logo.webp";
 import Searchinput from "./Searchinput";
 import Switcher from "./Switcher";
 
-interface Props {
-  onSearchn: (searchText: string) => void;
-}
-
-const NavBar = ({ onSearchn }: Props) => {
+const NavBar = () => {
   return (
     <HStack>
       <Image src={logo} boxSize="60px" />
-      <Searchinput onSearch={onSearchn}></Searchinput>
+      <Searchinput></Searchinput>
       <Switcher></Switcher>
     </HStack>
   );
