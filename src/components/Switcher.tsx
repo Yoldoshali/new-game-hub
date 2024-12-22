@@ -10,7 +10,7 @@ const Switcher = () => {
         mode === "light" ? setMode("dark") : setMode("light");
       }}
     >
-      {mode === "light" ? "Dark" : "Light"}
+      {mode === "light" ? "Light" : "Dark"}
     </Switch>
   );
 };
